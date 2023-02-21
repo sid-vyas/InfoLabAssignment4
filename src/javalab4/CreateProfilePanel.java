@@ -5,6 +5,7 @@
 package javalab4;
 
 import java.awt.Image;
+import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,14 +14,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Employee;
+import model.EmployeeDirectory;
 
 public class CreateProfilePanel extends javax.swing.JPanel {
 
     Employee inputEmployee;
-    public CreateProfilePanel() {
+    
+    JPanel bottomPanel;
+    public CreateProfilePanel(JPanel bottomPanel) {
         initComponents();
+        this.bottomPanel = bottomPanel;
         inputEmployee = new Employee();
     }
 
@@ -282,7 +289,8 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         } catch (ParseException ex) {
             Logger.getLogger(CreateProfilePanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-                
+        
+        try{        
         inputEmployee.setName(nameField.getText());
         inputEmployee.setEmployeeId(employeeIDAns.getText());
         inputEmployee.setAge(Integer.parseInt(ageField.getText()));
@@ -291,6 +299,12 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         inputEmployee.setEmail(mailField.getText());
         inputEmployee.setPhoneNumber(phoneField.getText());
         inputEmployee.setStartDate(startDate);
+        
+        
+                
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter your details", "Error", HEIGHT);
+        }
     }//GEN-LAST:event_saveButtonActionPerformed
 
 
