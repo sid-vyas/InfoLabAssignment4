@@ -8,12 +8,12 @@ import java.util.Date;
 
 public class Employee {
     String name;
-    String employeeId;
+    int employeeId;
     int age;
     String gender;
     Date startDate;
     String level;
-    String phoneNumber;
+    long phoneNumber;
     String email;
     String photo;
 
@@ -25,11 +25,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getEmployeeId() {
+    public int getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(String employeeId) {
+    public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -65,11 +65,11 @@ public class Employee {
         this.level = level;
     }
 
-    public String getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
