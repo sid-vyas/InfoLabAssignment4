@@ -24,4 +24,9 @@ public class EmployeeDirectory {
     public void removeEmployee(Employee employee) {
         this.allEmployees.remove(employee);
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeDirectory{" + "allEmployees =" + allEmployees + '}';
+    }
 }

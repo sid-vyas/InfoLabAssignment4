@@ -84,7 +84,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProfileButtonActionPerformed
-        CreateProfilePanel formPanel = new CreateProfilePanel(bottomPanel);
+        CreateProfilePanel formPanel = new CreateProfilePanel(bottomPanel, allEmployees);
         bottomPanel.add(formPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);

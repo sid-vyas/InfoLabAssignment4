@@ -23,12 +23,14 @@ import model.EmployeeDirectory;
 public class CreateProfilePanel extends javax.swing.JPanel {
 
     Employee inputEmployee;
-    
     JPanel bottomPanel;
-    public CreateProfilePanel(JPanel bottomPanel) {
+    EmployeeDirectory allEmployees;
+    
+    public CreateProfilePanel(JPanel bottomPanel, EmployeeDirectory allEmployees) {
         initComponents();
         this.bottomPanel = bottomPanel;
         inputEmployee = new Employee();
+        this.allEmployees = allEmployees;
     }
 
     @SuppressWarnings("unchecked")
@@ -299,12 +301,13 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         inputEmployee.setEmail(mailField.getText());
         inputEmployee.setPhoneNumber(phoneField.getText());
         inputEmployee.setStartDate(startDate);
-        
-        
-                
+               
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter your details", "Error", HEIGHT);
         }
+        
+        allEmployees.addEmployee(inputEmployee);
+        JOptionPane.showMessageDialog(this, "User Saved Successfully", "Success", HEIGHT);
     }//GEN-LAST:event_saveButtonActionPerformed
 
 
