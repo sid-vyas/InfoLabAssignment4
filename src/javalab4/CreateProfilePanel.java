@@ -54,7 +54,6 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         mailField = new javax.swing.JTextField();
         browsePhotoButton = new javax.swing.JButton();
         photoDisplayLabel = new javax.swing.JLabel();
-        photoDisplayLabel1 = new javax.swing.JLabel();
         ageField = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
 
@@ -172,11 +171,6 @@ public class CreateProfilePanel extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(256, 256, 256)
-                    .addComponent(photoDisplayLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(256, 256, 256)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,14 +209,9 @@ public class CreateProfilePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(browsePhotoButton)
                     .addComponent(photoDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(18, 18, 18)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(220, 220, 220)
-                    .addComponent(photoDisplayLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(421, Short.MAX_VALUE)))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -333,7 +322,6 @@ public class CreateProfilePanel extends javax.swing.JPanel {
     private javax.swing.JTextField phoneField;
     private javax.swing.JLabel phoneLabel;
     private javax.swing.JLabel photoDisplayLabel;
-    private javax.swing.JLabel photoDisplayLabel1;
     private javax.swing.JButton saveButton;
     private javax.swing.JTextField startDateField;
     private javax.swing.JLabel startDateLabel;

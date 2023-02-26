@@ -42,6 +42,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         viewDetailsButton.setText("View Details");
+        viewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewDetailsButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
@@ -89,6 +94,14 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
     }//GEN-LAST:event_createProfileButtonActionPerformed
+
+    private void viewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDetailsButtonActionPerformed
+        // TODO add your handling code here:
+        ViewDetailsPanel viewPanel = new ViewDetailsPanel(bottomPanel, allEmployees);
+        bottomPanel.add(viewPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_viewDetailsButtonActionPerformed
 
     /**
      * @param args the command line arguments

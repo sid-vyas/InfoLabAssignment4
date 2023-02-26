@@ -88,4 +88,9 @@ public class Employee {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
