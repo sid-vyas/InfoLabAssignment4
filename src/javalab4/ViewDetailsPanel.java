@@ -16,8 +16,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.RowFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.Employee;
 import model.EmployeeDirectory;
 
@@ -102,6 +104,11 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFieldActionPerformed(evt);
+            }
+        });
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchFieldKeyReleased(evt);
             }
         });
 
@@ -404,6 +411,14 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void searchFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) employeeListTable.getModel();
+        TableRowSorter<DefaultTableModel> ts = new TableRowSorter<DefaultTableModel>(model);
+        employeeListTable.setRowSorter(ts);
+        ts.setRowFilter(RowFilter.regexFilter(searchField.getText().trim()));
+    }//GEN-LAST:event_searchFieldKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
