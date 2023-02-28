@@ -32,6 +32,7 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         this.bottomPanel = bottomPanel;
         inputEmployee = new Employee();
         this.allEmployees = allEmployees;
+        employeeIDField.setText(Integer.toString(getEmployeeID()));
     }
 
     @SuppressWarnings("unchecked")
@@ -56,6 +57,8 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         photoDisplayLabel = new javax.swing.JLabel();
         ageField = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
+        employeeIDLabel = new javax.swing.JLabel();
+        employeeIDField = new javax.swing.JTextField();
 
         nameLabel.setText("Name:");
 
@@ -131,6 +134,16 @@ public class CreateProfilePanel extends javax.swing.JPanel {
             }
         });
 
+        employeeIDLabel.setText("Employee ID:");
+
+        employeeIDField.setEditable(false);
+        employeeIDField.setBackground(new java.awt.Color(204, 204, 204));
+        employeeIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeeIDFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,16 +174,21 @@ public class CreateProfilePanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(levelField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(nameField)
-                                        .addComponent(genderField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(startDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ageField))
-                                    .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nameField)
+                                            .addComponent(genderField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(startDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ageField))
+                                        .addGap(32, 32, 32)
+                                        .addComponent(employeeIDLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +198,9 @@ public class CreateProfilePanel extends javax.swing.JPanel {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameLabel))
+                    .addComponent(nameLabel)
+                    .addComponent(employeeIDLabel)
+                    .addComponent(employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ageLabel)
@@ -296,13 +316,17 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         }
         
         allEmployees.addEmployee(inputEmployee);
-        emptyTextFields();
+        resetForm();
         JOptionPane.showMessageDialog(this, "User Saved Successfully", "Success", HEIGHT);
                
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter all your details", "Error", HEIGHT);
         }
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void employeeIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeIDFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeIDFieldActionPerformed
 
     private int getEmployeeID() {
         int newEmployeeId = 1;
@@ -323,7 +347,10 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         return newEmployeeId;
     }
     
-    private void emptyTextFields() {
+    private void resetForm() {
+        inputEmployee = new Employee();
+        employeeIDField.setText(Integer.toString(getEmployeeID()));
+        
         nameField.setText("");
         ageField.setText("");
         genderField.setText("");
@@ -338,6 +365,8 @@ public class CreateProfilePanel extends javax.swing.JPanel {
     private javax.swing.JTextField ageField;
     private javax.swing.JLabel ageLabel;
     private javax.swing.JButton browsePhotoButton;
+    private javax.swing.JTextField employeeIDField;
+    private javax.swing.JLabel employeeIDLabel;
     private javax.swing.JTextField genderField;
     private javax.swing.JLabel genderLabel;
     private javax.swing.JTextField levelField;

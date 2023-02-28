@@ -19,55 +19,54 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane" alignment="0" min="-2" pref="597" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="nameLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="genderLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="startDateLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="levelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="phoneLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="ageLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="levelField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="startDateField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="genderField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="ageField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="phoneField" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="nameField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="searchLabel" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="searchField" min="-2" pref="202" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="updateButton" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="mailLabel" min="-2" pref="132" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="mailField" min="-2" pref="202" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Component id="titleLabel" alignment="0" min="-2" pref="294" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="browsePhotoButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="photoDisplayLabel" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                      <Component id="searchLabel" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="searchField" min="-2" pref="202" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="titleLabel" alignment="0" min="-2" pref="294" max="-2" attributes="0"/>
+                  <Component id="jScrollPane" alignment="0" min="-2" pref="597" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               <Component id="deleteButton" min="-2" pref="111" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                              <Component id="viewButton" min="-2" pref="111" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="updateButton" min="-2" pref="111" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="mailLabel" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="mailField" min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nameLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="genderLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="startDateLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                  <Component id="levelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="phoneLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                  <Component id="ageLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="employeeIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="levelField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="startDateField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="genderField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="ageField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="phoneField" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="nameField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="employeeIDField" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="browsePhotoButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="photoDisplayLabel" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="viewButton" min="-2" pref="111" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -79,7 +78,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="titleLabel" min="-2" pref="39" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="searchLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="searchField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -91,9 +90,14 @@
                   <Component id="viewButton" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteButton" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="employeeIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="employeeIDField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,17 +112,17 @@
                           <Component id="genderLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="genderField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="startDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="startDateField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="photoDisplayLabel" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="browsePhotoButton" min="-2" max="-2" attributes="0"/>
                   </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="startDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="startDateField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -137,7 +141,7 @@
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="updateButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="211" max="32767" attributes="0"/>
+              <EmptySpace pref="174" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -307,6 +311,22 @@
     <Component class="javax.swing.JTextField" name="nameField">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="employeeIDLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employee ID:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="employeeIDField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employeeIDFieldActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
