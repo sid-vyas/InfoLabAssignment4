@@ -264,28 +264,44 @@ public class CreateProfilePanel extends javax.swing.JPanel {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         Date startDate = new Date();
-        try {
-            startDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDateField.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(CreateProfilePanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+                
         try{        
         inputEmployee.setName(nameField.getText());
         inputEmployee.setEmployeeId(getEmployeeID());
-        inputEmployee.setAge(Integer.parseInt(ageField.getText()));
+        
+        if(Integer.parseInt(ageField.getText()) < 18 || Integer.parseInt(ageField.getText()) > 65) {
+            JOptionPane.showMessageDialog(this, "Please enter an age between 18 and 65", "Error", HEIGHT);
+            return;
+        } else {
+            inputEmployee.setAge(Integer.parseInt(ageField.getText()));
+        }
+        
         inputEmployee.setGender(genderField.getText());
         inputEmployee.setLevel(levelField.getText());
         inputEmployee.setEmail(mailField.getText());
-        inputEmployee.setPhoneNumber(Long.parseLong(phoneField.getText()));
-        inputEmployee.setStartDate(startDate);
-               
-        } catch(Exception e) {
-            JOptionPane.showMessageDialog(this, "Please enter your details", "Error", HEIGHT);
+        
+        if(phoneField.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, "Phone number should be 10 digits long", "Error", HEIGHT);
+            return;
+        } else {
+            inputEmployee.setPhoneNumber(Long.parseLong(phoneField.getText()));
+        }
+        
+        try {
+            startDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDateField.getText());
+            inputEmployee.setStartDate(startDate);
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter the date in the dd/MM/yyyy format", "Error", HEIGHT);
+            return;
         }
         
         allEmployees.addEmployee(inputEmployee);
+        emptyTextFields();
         JOptionPane.showMessageDialog(this, "User Saved Successfully", "Success", HEIGHT);
+               
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter all your details", "Error", HEIGHT);
+        }
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private int getEmployeeID() {
@@ -305,6 +321,17 @@ public class CreateProfilePanel extends javax.swing.JPanel {
         }
         
         return newEmployeeId;
+    }
+    
+    private void emptyTextFields() {
+        nameField.setText("");
+        ageField.setText("");
+        genderField.setText("");
+        levelField.setText("");
+        mailField.setText("");
+        phoneField.setText("");
+        startDateField.setText("");
+        photoDisplayLabel.setIcon(new ImageIcon());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

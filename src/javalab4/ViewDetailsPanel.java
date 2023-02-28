@@ -348,24 +348,13 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) employeeListTable.getModel();
             Employee employee = (Employee) model.getValueAt(selectedIndex, 1);
             
-            Date startDate = new Date();
-            try {
-                startDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDateField.getText());
-            } catch (ParseException ex) {
-                Logger.getLogger(CreateProfilePanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                         
-            employee.setName(nameField.getText());
-            employee.setAge(Integer.parseInt(ageField.getText()));
-            employee.setGender(genderField.getText());
-            employee.setLevel(levelField.getText());
-            employee.setEmail(mailField.getText());
-            employee.setPhoneNumber(Long.parseLong(phoneField.getText()));
-            employee.setStartDate(startDate);
-            employee.setPhoto(selectedPhotoPath);
+            boolean isUpdated = updateUserDetails(employee);
             
-            JOptionPane.showMessageDialog(this, "The selected entry is successfully updated", "Updated", HEIGHT);
-            populateTable();
+            if(isUpdated) {
+               JOptionPane.showMessageDialog(this, "The selected entry is successfully updated", "Updated", HEIGHT);
+               populateTable();
+               emptyTextFields();
+            }
         }
                 
     }//GEN-LAST:event_updateButtonActionPerformed
@@ -390,19 +379,22 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         if (selectedIndex <0){
             JOptionPane.showMessageDialog(this, "Please select an entry to view", "Error", HEIGHT);
             return;
-        }        
+        }
+      
         DefaultTableModel model = (DefaultTableModel) employeeListTable.getModel();
         Employee selectedEmployee = (Employee) model.getValueAt(selectedIndex, 1);
         
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String date = sdf.format(selectedEmployee.getStartDate());
         selectedPhotoPath = selectedEmployee.getPhoto();
         
+        nameField.setText(selectedEmployee.getName());
         ageField.setText(Integer.toString(selectedEmployee.getAge()));
         genderField.setText(selectedEmployee.getGender());
         levelField.setText(selectedEmployee.getLevel());
         mailField.setText(selectedEmployee.getEmail());
-        searchField.setText(selectedEmployee.getName());
         phoneField.setText(Long.toString(selectedEmployee.getPhoneNumber()));
-        startDateField.setText(selectedEmployee.getStartDate().toString());
+        startDateField.setText(date);
         
         ImageIcon imagePreview = new ImageIcon(selectedEmployee.getPhoto());
         Image image = imagePreview.getImage().getScaledInstance(photoDisplayLabel.getWidth(), photoDisplayLabel.getHeight(), Image.SCALE_SMOOTH);
@@ -451,5 +443,44 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
             row[2] = emp.getLevel();
             model.addRow(row);
         }
+    }
+    
+    private boolean updateUserDetails(Employee employee) {
+        Date startDate = new Date();
+       
+        employee.setName(nameField.getText());
+        employee.setAge(Integer.parseInt(ageField.getText()));
+        employee.setGender(genderField.getText());
+        employee.setLevel(levelField.getText());
+        employee.setEmail(mailField.getText());
+        
+        if(phoneField.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, "Phone number should be 10 digits long", "Error", HEIGHT);
+            return false;
+        } else {
+            employee.setPhoneNumber(Long.parseLong(phoneField.getText()));
+        }
+        
+        try {
+            startDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDateField.getText());
+            employee.setStartDate(startDate);
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter the date in the dd/MM/yyyy format", "Error", HEIGHT);
+            return false;
+        }
+        
+        employee.setPhoto(selectedPhotoPath);
+        return true;
+    }
+    
+    private void emptyTextFields() {
+        nameField.setText("");
+        ageField.setText("");
+        genderField.setText("");
+        levelField.setText("");
+        mailField.setText("");
+        phoneField.setText("");
+        startDateField.setText("");
+        photoDisplayLabel.setIcon(new ImageIcon());
     }
 }
